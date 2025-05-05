@@ -143,3 +143,68 @@ const PLACES = [
     googleMapsUrl: "https://www.google.com/maps?q=Ancora+Cafe+Madison+WI"
   }
 ];
+
+export default function Home() {
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = ["All", ...Array.from(new Set(PLACES.map((p) => p.category)))];
+
+  const filtered = PLACES.filter((p) => {
+    const matchesSearch =
+      p.name.toLowerCase().includes(search.toLowerCase()) ||
+      p.category.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = selectedCategory === "All" || p.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  return (
+    <>
+      <Head>
+        <title>The Pride Guide</title>
+      </Head>
+      <main className="p-4 space-y-6 max-w-5xl mx-auto font-sans">
+        <h1 className="text-4xl font-extrabold text-center">
+          <span className="text-red-500">The Pride Guide</span>
+        </h1>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full p-2 border rounded"
+        />
+        <div className="flex flex-wrap gap-2 mt-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-3 py-1 rounded-full border ${
+                selectedCategory === category ? "bg-pink-500 text-white" : "bg-white"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+          {filtered.map((place) => (
+            <div key={place.id} className="border p-4 rounded shadow bg-white">
+              <h2 className="text-lg font-bold">{place.name}</h2>
+              <p className="text-sm text-gray-600 mb-2">{place.description}</p>
+              <a
+                href={place.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 underline"
+              >
+                View on Google Maps
+              </a>
+            </div>
+          ))}
+        </div>
+      </main>
+    </>
+  );
+}
