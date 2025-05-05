@@ -11,19 +11,62 @@ const PLACES = [
   },
   {
     id: 2,
-    name: "Plan B Nightclub",
-    category: "Nightlife",
-    description: "Popular LGBTQ+ bar with drag shows and dancing.",
-    googleMapsUrl: "https://www.google.com/maps?q=Plan+B+Madison+WI",
-  },
-  {
-    id: 3,
     name: "Sex Out Loud - UW Madison",
     category: "Student Org",
     description: "Peer sex education group supporting LGBTQ+ health.",
     googleMapsUrl: "https://www.google.com/maps?q=Sex+Out+Loud+UW+Madison",
   },
+  {
+    id: 3,
+    name: "Sotto",
+    category: "Nightlife",
+    description: "Trendy basement bar and lounge with DJ nights and an inclusive crowd.",
+    googleMapsUrl: "https://www.google.com/maps?q=Sotto+Madison+WI",
+  },
+  {
+    id: 4,
+    name: "FIVE Nightclub",
+    category: "Nightlife",
+    description: "Popular LGBTQ+ dance club and event venue with theme nights.",
+    googleMapsUrl: "https://www.google.com/maps?q=FIVE+Nightclub+Madison+WI",
+  },
+  {
+    id: 5,
+    name: "Roxxy",
+    category: "Nightlife",
+    description: "Vibrant LGBTQ+ friendly bar known for music and drag shows.",
+    googleMapsUrl: "https://www.google.com/maps?q=Roxxy+Madison+WI",
+  },
+  {
+    id: 6,
+    name: "Shamrock Bar and Grill",
+    category: "Bar & Grill",
+    description: "Casual LGBTQ+ friendly bar with pool tables and daily specials.",
+    googleMapsUrl: "https://www.google.com/maps?q=Shamrock+Bar+and+Grill+Madison+WI",
+  },
+  {
+    id: 7,
+    name: "Woof's",
+    category: "Sports Bar",
+    description: "Madison's only LGBTQ+ sports bar with TVs, drinks, and themed nights.",
+    googleMapsUrl: "https://www.google.com/maps?q=Woof's+Madison+WI",
+  },
+  {
+    id: 8,
+    name: "Dyke Dive",
+    category: "Pop-Up / Event Series",
+    description: "Queer pop-up events, dance parties, and safe spaces for femmes and dykes.",
+    googleMapsUrl: "https://www.google.com/search?q=Dyke+Dive+Madison+WI",
+  },
+  {
+    id: 9,
+    name: "A Room of One’s Own",
+    category: "Bookstore",
+    description: "Queer- and woman-owned bookstore with inclusive titles and community events.",
+    googleMapsUrl: "https://www.google.com/maps?q=A+Room+of+One's+Own+Madison+WI",
+  },
 ];
+
 
 export default function Home() {
   const [search, setSearch] = useState("");
