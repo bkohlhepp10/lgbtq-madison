@@ -71,7 +71,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", ...new Set(PLACES.map((p) => p.category))];
+  const categories = ["All", ...Array.from(new Set(PLACES.map((p) => p.category)))];
 
   const filtered = PLACES.filter((p) => {
     const matchesSearch =
