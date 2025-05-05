@@ -83,20 +83,23 @@ export default function Home() {
   });
 
   return (
-    <main className="p-4 space-y-6">
-      <h1 className="text-3xl font-bold text-pink-600">🌈 LGBTQ+ Madison Resources</h1>
+    <main className="p-4 space-y-6 max-w-5xl mx-auto">
+      {/* 🌈 Title */}
+      <h1 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 text-center">
+        LGBTQ+ Madison Resources
+      </h1>
 
-      {/* Search input */}
+      {/* 🔍 Search */}
       <input
         type="text"
         placeholder="Search by name or category..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-2 border border-gray-300 rounded-md"
+        className="w-full p-3 border border-gray-300 rounded-md shadow-sm"
       />
 
-      {/* Category Filter Buttons */}
-      <div className="flex flex-wrap gap-2">
+      {/* 🏷️ Category Buttons */}
+      <div className="flex flex-wrap gap-2 justify-center">
         {categories.map((category) => (
           <button
             key={category}
@@ -112,21 +115,23 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Cards */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* 📍 Resource Cards */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filtered.map((place) => (
           <div
             key={place.id}
-            className="p-4 border rounded-lg shadow-sm hover:shadow-md transition"
+            className="p-5 rounded-xl border border-gray-200 bg-white shadow-lg hover:shadow-xl transition duration-300"
           >
-            <h2 className="text-lg font-semibold">{place.name}</h2>
-            <p className="text-sm text-gray-500">{place.category}</p>
-            <p className="mt-2 text-sm">{place.description}</p>
+            <h2 className="text-xl font-semibold">{place.name}</h2>
+            <span className="inline-block mt-1 mb-2 px-2 py-1 text-xs font-semibold text-white bg-pink-500 rounded-full">
+              {place.category}
+            </span>
+            <p className="text-sm text-gray-700">{place.description}</p>
             <a
               href={place.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline text-sm mt-2 inline-block"
+              className="text-blue-600 underline text-sm inline-block mt-2"
             >
               View on Google Maps
             </a>
@@ -134,12 +139,12 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Embedded Google Map */}
+      {/* 🗺️ Map */}
       <div className="mt-10">
-        <h2 className="text-2xl font-bold mb-2">Madison Map</h2>
+        <h2 className="text-2xl font-bold mb-2 text-center">Madison Map</h2>
         <iframe
           title="Madison LGBTQ Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.5202107154476!2d-89.4012304!3d43.073051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8806536d22941715%3A0x7a59dffb0c5e0b64!2sMadison%2C%20WI!5e0!3m2!1sen!2sus!4v1615917395101!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11739.724699291254!2d-89.4007!3d43.0731!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8806536d22941715%3A0x7a59dffb0c5e0b64!2sMadison%2C%20WI!5e0!3m2!1sen!2sus!4v1615917395101!5m2!1sen!2sus"
           width="100%"
           height="300"
           style={{ border: 0 }}
