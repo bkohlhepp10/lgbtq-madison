@@ -74,17 +74,19 @@ const PLACES = [
     googleMapsUrl:
       "https://www.google.com/maps?q=A+Room+of+One's+Own+Madison+WI",
   },
+  {
+    id: 10,
+    name: "The Rigby Pub & Grill",
+    category: "Bar & Grill",
+    description:
+      "Laid-back LGBTQ+ friendly spot with food, drinks, and karaoke nights.",
+    googleMapsUrl: "https://www.google.com/maps?q=The+Rigby+Pub+and+Grill+Madison+WI",
+  },
 ];
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [newPlace, setNewPlace] = useState({
-    name: "",
-    category: "",
-    description: "",
-    googleMapsUrl: "",
-  });
 
   const categories = ["All", ...Array.from(new Set(PLACES.map((p) => p.category)))];
 
@@ -120,117 +122,64 @@ export default function Home() {
           <span className="text-purple-500">d</span>
           <span className="text-red-500">e</span>
         </h1>
+        <p className="text-center text-gray-500 text-sm mt-1">
+          Discover queer-friendly spaces across Madison
+        </p>
+        <div className="h-1 w-24 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mx-auto mb-4" />
 
-        <input
-          type="text"
-          placeholder="Search by name or category..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md shadow-sm"
-        />
+        <section className="bg-gray-50 p-6 rounded-xl shadow-inner">
+          <input
+            type="text"
+            placeholder="Search by name or category..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-md shadow-sm"
+          />
 
-        <div className="flex flex-wrap gap-2 justify-center">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-3 py-1 rounded-full border text-sm transition hover:scale-105 active:scale-95 transform duration-200 ${
-                selectedCategory === category
-                  ? "bg-pink-500 text-white"
-                  : "bg-white text-gray-600 border-gray-300"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filtered.map((place) => (
-            <div
-              key={place.id}
-              className="p-5 rounded-xl border border-gray-200 bg-white shadow-lg hover:shadow-xl hover:rotate-[0.5deg] transition duration-300"
-            >
-              <h2 className="text-xl font-semibold flex items-center gap-2">
-                {place.name}
-              </h2>
-              <span className="inline-block mt-1 mb-2 px-2 py-1 text-xs font-semibold text-white bg-pink-500 rounded-full">
-                {place.category}
-              </span>
-              <p className="text-sm text-gray-700">{place.description}</p>
-              <a
-                href={place.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline text-sm inline-block mt-2"
+          <div className="flex flex-wrap gap-2 justify-center mt-4 mb-6">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-3 py-1 rounded-full border text-sm transition hover:scale-105 active:scale-95 transform duration-200 ${
+                  selectedCategory === category
+                    ? "bg-pink-500 text-white"
+                    : "bg-white text-gray-600 border-gray-300"
+                }`}
               >
-                ✨ Take me there
-              </a>
-            </div>
-          ))}
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filtered.map((place) => (
+              <div
+                key={place.id}
+                className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-xl hover:border-pink-400 transition-all duration-300 group"
+              >
+                <h2 className="text-lg font-bold text-gray-900 group-hover:text-pink-600 mb-1">
+                  {place.name}
+                </h2>
+                <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold text-white bg-pink-500 rounded-full">
+                  {place.category}
+                </span>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  {place.description}
+                </p>
+                <a
+                  href={place.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-pink-600 underline hover:text-pink-800"
+                >
+                  Take me there →
+                </a>
+              </div>
+            ))}
+          </section>
         </section>
 
-        {/* Suggest a Place Form */}
-        <div className="mt-16 max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 text-center">✨ Suggest a New Place</h2>
-          <form
-            className="space-y-4 bg-white p-6 rounded-xl shadow-md border"
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log("Suggested Place:", newPlace);
-              alert("Thanks for suggesting a place!");
-              setNewPlace({
-                name: "",
-                category: "",
-                description: "",
-                googleMapsUrl: "",
-              });
-            }}
-          >
-            <input
-              className="w-full p-2 border rounded"
-              placeholder="Place name"
-              value={newPlace.name}
-              onChange={(e) => setNewPlace({ ...newPlace, name: e.target.value })}
-              required
-            />
-            <input
-              className="w-full p-2 border rounded"
-              placeholder="Category (e.g. Nightlife, Community)"
-              value={newPlace.category}
-              onChange={(e) =>
-                setNewPlace({ ...newPlace, category: e.target.value })
-              }
-              required
-            />
-            <textarea
-              className="w-full p-2 border rounded"
-              placeholder="Description"
-              rows={3}
-              value={newPlace.description}
-              onChange={(e) =>
-                setNewPlace({ ...newPlace, description: e.target.value })
-              }
-              required
-            />
-            <input
-              className="w-full p-2 border rounded"
-              placeholder="Optional Google Maps link"
-              value={newPlace.googleMapsUrl}
-              onChange={(e) =>
-                setNewPlace({ ...newPlace, googleMapsUrl: e.target.value })
-              }
-            />
-            <button
-              type="submit"
-              className="px-4 py-2 rounded bg-pink-500 text-white hover:bg-pink-600 transition"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-
-        {/* Madison Map */}
         <div className="mt-10">
           <h2 className="text-2xl font-bold mb-2 text-center">Madison Map</h2>
           <iframe
@@ -245,7 +194,7 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-sm text-gray-400 mt-16">
-          💖 Built with Pride in Madison | © 2025 The Pride Guide
+          Built with Pride in Madison | © 2025 The Pride Guide
         </footer>
       </main>
     </>
