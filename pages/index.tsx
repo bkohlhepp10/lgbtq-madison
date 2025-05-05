@@ -85,9 +85,9 @@ export default function Home() {
   return (
     <main className="p-4 space-y-6 max-w-5xl mx-auto">
       {/* 🌈 Title */}
-      <h1 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 text-center">
-        LGBTQ+ Madison Resources
-      </h1>
+      <h1 className="text-4xl font-extrabold text-center bg-gradient-to-r from-red-500 via-orange-400 via-yellow-300 via-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+  The Pride Guide
+</h1>
 
       {/* 🔍 Search */}
       <input
