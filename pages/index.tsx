@@ -145,8 +145,7 @@ const PLACES = [
     description: "Friendly café with LGBTQ+ staff and cozy spaces (LGBTQ+ accepting).",
     googleMapsUrl: "https://www.google.com/maps?q=Ancora+Cafe+Madison+WI",
   },
-,
-  {
+{
     id: 21,
     name: "Built with Pride in Madison by Bennett Kohlhepp",
     category: "Acknowledgment",
