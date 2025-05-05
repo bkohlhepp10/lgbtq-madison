@@ -164,46 +164,97 @@ export default function Home() {
         <title>The Pride Guide</title>
       </Head>
       <main className="p-4 space-y-6 max-w-5xl mx-auto font-sans">
-        <h1 className="text-4xl font-extrabold text-center">
-          <span className="text-red-500">The Pride Guide</span>
+        <h1 className="text-4xl font-extrabold text-center space-x-1">
+          <span className="text-red-500">T</span>
+          <span className="text-orange-400">h</span>
+          <span className="text-yellow-400">e</span>
+          <span> </span>
+          <span className="text-green-500">P</span>
+          <span className="text-blue-500">r</span>
+          <span className="text-purple-500">i</span>
+          <span className="text-red-500">d</span>
+          <span className="text-orange-400">e</span>
+          <span> </span>
+          <span className="text-yellow-400">G</span>
+          <span className="text-green-500">u</span>
+          <span className="text-blue-500">i</span>
+          <span className="text-purple-500">d</span>
+          <span className="text-red-500">e</span>
         </h1>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full p-2 border rounded"
-        />
-        <div className="flex flex-wrap gap-2 mt-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-3 py-1 rounded-full border ${
-                selectedCategory === category ? "bg-pink-500 text-white" : "bg-white"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <p className="text-center text-gray-500 text-sm mt-1">
+          Discover queer-friendly spaces across Madison
+        </p>
+        <div className="h-1 w-24 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mx-auto mb-4" />
+
+        <section className="bg-gray-50 p-6 rounded-xl shadow-inner">
+          <input
+            type="text"
+            placeholder="Search by name or category..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-md shadow-sm"
+          />
+
+          <div className="flex flex-wrap gap-2 justify-center mt-4 mb-6">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-3 py-1 rounded-full border text-sm transition hover:scale-105 active:scale-95 transform duration-200 ${
+                  selectedCategory === category
+                    ? "bg-pink-500 text-white"
+                    : "bg-white text-gray-600 border-gray-300"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filtered.map((place) => (
+              <div
+                key={place.id}
+                className="bg-white p-5 rounded-xl border border-gray-200 shadow-md hover:shadow-xl hover:border-pink-400 transition-all duration-300 group"
+              >
+                <h2 className="text-lg font-bold text-gray-900 group-hover:text-pink-600 mb-1">
+                  {place.name}
+                </h2>
+                <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold text-white bg-pink-500 rounded-full">
+                  {place.category}
+                </span>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  {place.description}
+                </p>
+                <a
+                  href={place.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-pink-600 underline hover:text-pink-800"
+                >
+                  Take me there →
+                </a>
+              </div>
+            ))}
+          </section>
+        </section>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-2 text-center">Madison Map</h2>
+          <iframe
+            title="Madison LGBTQ Map"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11739.724699291254!2d-89.385!3d43.069!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8806536d22941715%3A0x7a59dffb0c5e0b64!2sMadison%2C%20WI!5e0!3m2!1sen!2sus!4v1615917395101!5m2!1sen!2sus"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-          {filtered.map((place) => (
-            <div key={place.id} className="border p-4 rounded shadow bg-white">
-              <h2 className="text-lg font-bold">{place.name}</h2>
-              <p className="text-sm text-gray-600 mb-2">{place.description}</p>
-              <a
-                href={place.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-600 underline"
-              >
-                View on Google Maps
-              </a>
-            </div>
-          ))}
-        </div>
+        <footer className="text-center text-sm text-gray-400 mt-16">
+          Built with Pride in Madison by Bennett Kohlhepp | © 2025 The Pride Guide
+        </footer>
       </main>
     </>
   );
