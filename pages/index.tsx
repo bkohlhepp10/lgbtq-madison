@@ -142,7 +142,7 @@ const PLACES = [
     name: "Gender and Sexuality Campus Center (GSCC)",
     category: "Campus Org",
     description: "Provides education, outreach, and advocacy for LGBTQ+ students at UW–Madison.",
-    googleMapsUrl: "https://www.google.com/maps/place/Red+Gym/@43.0765923,-89.3996541,17z/",
+    googleMapsUrl: "https://lgbt.wisc.edu/",
   },
   {
     id: "qtpoc",
@@ -163,7 +163,7 @@ const PLACES = [
     name: "Sex Out Loud",
     category: "Campus Org",
     description: "Peer-led org offering sex ed with a focus on pleasure, identity, and inclusion.",
-    googleMapsUrl: "https://www.sexoutlouduw.com/",
+    googleMapsUrl: "https://www.sexoutloud.org/",
   },
   {
     id: "uhs",
