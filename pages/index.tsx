@@ -142,7 +142,49 @@ const PLACES = [
     category: "Cafe",
     description: "Friendly café with LGBTQ+ staff and cozy spaces (LGBTQ+ accepting).",
     googleMapsUrl: "https://www.google.com/maps?q=Ancora+Cafe+Madison+WI"
-  }
+  },
+  {
+    id: "gscc",
+    name: "Gender and Sexuality Campus Center (GSCC)",
+    category: "Campus Org",
+    description: "Provides education, outreach, and advocacy for LGBTQ+ students at UW–Madison.",
+    googleMapsUrl: "https://www.google.com/maps/place/Red+Gym/@43.0765923,-89.3996541,17z/",
+  },
+  {
+    id: "qtpoc",
+    name: "Queer and Trans People of Color (QTPOC)",
+    category: "Campus Org",
+    description: "A space by and for queer and trans BIPOC students at UW–Madison.",
+    googleMapsUrl: "https://lgbt.wisc.edu/identity-community/qtpoc/",
+  },
+  {
+    id: "pride-society",
+    name: "The Pride Society",
+    category: "Campus Org",
+    description: "Hosts queer events like Pride Prom; one of UW's oldest LGBTQ+ student groups.",
+    googleMapsUrl: "https://www.dailycardinal.com/article/2024/06/an-lgbtq-students-guide-to-madison",
+  },
+  {
+    id: "sex-out-loud",
+    name: "Sex Out Loud",
+    category: "Campus Org",
+    description: "Peer-led org offering sex ed with a focus on pleasure, identity, and inclusion.",
+    googleMapsUrl: "https://www.sexoutlouduw.com/",
+  },
+  {
+    id: "uhs",
+    name: "University Health Services (UHS)",
+    category: "Health",
+    description: "Offers gender-affirming care, therapy, and trans health services for students.",
+    googleMapsUrl: "https://www.google.com/maps/place/University+Health+Services/@43.074722,-89.395267,17z/",
+  },
+  {
+    id: "path-clinic",
+    name: "PATH Clinic",
+    category: "Health",
+    description: "Serves gender-variant children and adolescents with affirming medical care.",
+    googleMapsUrl: "https://www.uwhealth.org/services/gender-services",
+  },
 ];
 
 
