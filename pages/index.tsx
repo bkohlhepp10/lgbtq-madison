@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import { default as Link } from "next/link";
 
 const PLACES = [
   {
@@ -165,6 +166,14 @@ export default function Home() {
         <title>The Pride Guide</title>
       </Head>
       <main className="p-4 space-y-6 max-w-5xl mx-auto font-sans">
+        <nav className="flex justify-center flex-wrap gap-4 text-sm text-pink-600 font-medium mb-6">
+          <Link href="/">Places</Link>
+          <Link href="/resources">Resources</Link>
+          <Link href="/coming-out">Coming Out Help</Link>
+          <Link href="/safe-map">Safe Space Map</Link>
+          <Link href="/suggest">Suggest a Place</Link>
+        </nav>
+
         <h1 className="text-4xl font-extrabold text-center space-x-1">
           <span className="text-red-500">T</span>
           <span className="text-orange-400">h</span>
