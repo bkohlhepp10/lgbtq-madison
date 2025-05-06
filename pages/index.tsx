@@ -213,7 +213,7 @@ export default function Home() {
           <Link href="/">Places</Link>
           <Link href="/resources">Resources</Link>
           <Link href="/coming-out">Coming Out Help</Link>
-          <Link href="/safe-map">Safe Space Map</Link>
+          <Link href="/safe-space-map">Safe Space Map</Link>
           <Link href="/suggest">Suggest a Place</Link>
         </nav>
 
