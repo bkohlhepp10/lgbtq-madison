@@ -56,7 +56,7 @@ const PLACES = [
   {
     id: 8,
     name: "A Room of One’s Own",
-    category: "Cafe",
+    category: "Shop",
     description: "Queer- and woman-owned bookstore with inclusive titles and community events (LGBTQ+ specific).",
     googleMapsUrl: "https://www.google.com/maps?q=A+Room+of+One's+Own+Madison+WI"
   },
