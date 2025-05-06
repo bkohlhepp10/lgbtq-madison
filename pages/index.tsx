@@ -173,6 +173,13 @@ const PLACES = [
     googleMapsUrl: "https://www.google.com/maps/place/University+Health+Services/@43.074722,-89.395267,17z/",
   },
   {
+    id: "moms-bar",
+    name: "Mom’s Bar",
+    category: "Bar & Grill",
+    description: "A laid-back queer-friendly dive bar known for karaoke and welcoming vibes.",
+    googleMapsUrl: "https://goo.gl/maps/wVvKzY64LGPY7pAz9",
+  },
+  {
     id: "path-clinic",
     name: "PATH Clinic",
     category: "Health",
