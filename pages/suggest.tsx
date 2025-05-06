@@ -43,7 +43,7 @@ export default function Suggest() {
         <title>Suggest a Place – Pride Guide</title>
       </Head>
       <main className="max-w-xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-center mb-6">🌟 Suggest a Place</h1>
+        <h1 className="text-3xl font-bold text-center mb-6"> Suggest a Place</h1>
 
         {submitted ? (
           <p className="text-center text-green-600 font-medium">
