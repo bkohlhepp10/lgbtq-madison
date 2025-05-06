@@ -47,7 +47,7 @@ const PLACES = [
   {
     id: 7,
     name: "Woof's",
-    category: "Sports Bar",
+    category: "Bar & Grill",
     description: "Madison's only LGBTQ+ sports bar with TVs, drinks, and themed nights (LGBTQ+ specific).",
     googleMapsUrl: "https://www.google.com/maps?q=Woof's+Madison+WI"
   },
@@ -61,7 +61,7 @@ const PLACES = [
   {
     id: 9,
     name: "A Room of One’s Own",
-    category: "Bookstore",
+    category: "Cafe",
     description: "Queer- and woman-owned bookstore with inclusive titles and community events (LGBTQ+ specific).",
     googleMapsUrl: "https://www.google.com/maps?q=A+Room+of+One's+Own+Madison+WI"
   },
@@ -82,7 +82,7 @@ const PLACES = [
   {
     id: 12,
     name: "Leopold’s Books Bar Caffè",
-    category: "Bookstore & Cafe",
+    category: "Cafe",
     description: "Literary bar and café known for progressive events and LGBTQ+ friendly vibe (LGBTQ+ accepting).",
     googleMapsUrl: "https://www.google.com/maps?q=Leopold's+Books+Bar+Caffè+Madison+WI"
   },
@@ -143,6 +143,7 @@ const PLACES = [
     googleMapsUrl: "https://www.google.com/maps?q=Ancora+Cafe+Madison+WI"
   }
 ];
+
 
 export default function Home() {
   const [search, setSearch] = useState("");
